@@ -10,6 +10,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AboutUsModule } from './about-us/about-us.module';
 import { ContactUsModule } from './contact-us/contact-us.module';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
@@ -22,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     AboutUsModule,
     ContactUsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
